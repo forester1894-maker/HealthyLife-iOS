@@ -29,7 +29,7 @@ jobs:
             -project HealthyLife.xcodeproj \
             -scheme HealthyLife \
             -sdk iphonesimulator \
-            -destination 'platform=iOS Simulator,name=iPhone 15,OS=latest' \
+            -destination 'generic/platform=iOS Simulator' \
             -configuration Release \
             CODE_SIGNING_ALLOWED=NO \
             build
