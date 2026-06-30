@@ -14,7 +14,7 @@ struct FoodSelectionView: View {
                 .background(AppTheme.container)
                 .clipShape(RoundedRectangle(cornerRadius: 10))
                 .padding()
-                .onChange(of: query) { _, newValue in
+                .onChange(of: query) { newValue in
                     foods = FoodDatabase.shared.search(newValue)
                 }
 

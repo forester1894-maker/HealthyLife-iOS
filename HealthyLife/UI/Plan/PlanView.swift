@@ -41,7 +41,14 @@ struct PlanView: View {
                 .background(AppTheme.background)
                 .navigationTitle("План на неделю")
             } else {
-                ContentUnavailableView("План не готов", systemImage: "calendar")
+                VStack(spacing: 12) {
+                    Image(systemName: "calendar")
+                        .font(.largeTitle)
+                        .foregroundStyle(AppTheme.primary)
+                    Text("План не готов")
+                        .font(.headline)
+                }
+                .navigationTitle("План на неделю")
             }
         }
     }

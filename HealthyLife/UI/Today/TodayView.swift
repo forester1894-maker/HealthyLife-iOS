@@ -17,7 +17,16 @@ struct TodayView: View {
                     }
                     .padding()
                 } else {
-                    ContentUnavailableView("Нет плана", systemImage: "leaf", description: Text("Пройдите опрос"))
+                    VStack(spacing: 12) {
+                        Image(systemName: "leaf")
+                            .font(.largeTitle)
+                            .foregroundStyle(AppTheme.primary)
+                        Text("Нет плана")
+                            .font(.headline)
+                        Text("Пройдите опрос")
+                            .foregroundStyle(.secondary)
+                    }
+                    .padding()
                 }
             }
             .background(AppTheme.background)
