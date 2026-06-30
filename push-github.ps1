@@ -1,21 +1,12 @@
 # Upload Healthy Life iOS to GitHub
-# GitHub НЕ принимает пароль для git push — нужен Personal Access Token (PAT).
-#
-# Как получить PAT (1 раз, ~2 мин):
-# 1. https://github.com/settings/tokens
-# 2. Generate new token (classic) → scope: repo
-# 3. Скопируйте токен
-#
-# Запуск в PowerShell:
-#   $env:GITHUB_TOKEN = "ghp_ВАШ_ТОКЕН"
-#   .\push-github.ps1
+# Usage: $env:GITHUB_TOKEN = "ghp_..."; .\push-github.ps1
 
 $ErrorActionPreference = "Stop"
 $env:Path = "C:\Program Files\Git\bin;C:\Program Files\Git\cmd;" + $env:Path
 
 $token = $env:GITHUB_TOKEN
 if (-not $token) {
-    Write-Host "Задайте токен: `$env:GITHUB_TOKEN = 'ghp_...'" -ForegroundColor Red
+    Write-Host "Set token: `$env:GITHUB_TOKEN = 'ghp_...'" -ForegroundColor Red
     exit 1
 }
 
@@ -31,7 +22,7 @@ $headers = @{
 
 $user = Invoke-RestMethod -Uri "https://api.github.com/user" -Headers $headers
 $login = $user.login
-Write-Host "GitHub: $login" -ForegroundColor Green
+Write-Host "GitHub user: $login" -ForegroundColor Green
 
 $existing = $null
 try {
@@ -39,23 +30,23 @@ try {
 } catch {}
 
 if (-not $existing) {
-    Write-Host "Создаю репозиторий $repoName ..."
+    Write-Host "Creating repository $repoName ..."
     $body = @{ name = $repoName; private = $false; auto_init = $false } | ConvertTo-Json
     Invoke-RestMethod -Method Post -Uri "https://api.github.com/user/repos" -Headers $headers -Body $body -ContentType "application/json" | Out-Null
 } else {
-    Write-Host "Репозиторий уже существует."
+    Write-Host "Repository already exists."
 }
 
 $remoteUrl = "https://$login`:$token@github.com/$login/$repoName.git"
-git remote remove origin 2>$null
+git remote remove origin 2>$null | Out-Null
+if ($LASTEXITCODE -ne 0) { $global:LASTEXITCODE = 0 }
 git remote add origin $remoteUrl
 
-Write-Host "Отправляю код на GitHub ..."
+Write-Host "Pushing to GitHub ..."
 git push -u origin main
 
-# Убираем токен из remote URL
 git remote set-url origin "https://github.com/$login/$repoName.git"
 
 Write-Host ""
-Write-Host "Готово: https://github.com/$login/$repoName" -ForegroundColor Green
-Write-Host "Сборка: https://github.com/$login/$repoName/actions" -ForegroundColor Cyan
+Write-Host "Done: https://github.com/$login/$repoName" -ForegroundColor Green
+Write-Host "Actions: https://github.com/$login/$repoName/actions" -ForegroundColor Cyan
