@@ -1,0 +1,405 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A10000000000000000000001 /* HealthyLifeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000001 /* HealthyLifeApp.swift */; };
+		A10000000000000000000002 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000002 /* AppState.swift */; };
+		A10000000000000000000003 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000003 /* RootView.swift */; };
+		A10000000000000000000004 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000004 /* AppConfig.swift */; };
+		A10000000000000000000005 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000005 /* AppTheme.swift */; };
+		A10000000000000000000006 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000006 /* Models.swift */; };
+		A10000000000000000000007 /* NutritionCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000007 /* NutritionCalculator.swift */; };
+		A10000000000000000000008 /* WeeklyPlanGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000008 /* WeeklyPlanGenerator.swift */; };
+		A10000000000000000000009 /* DiseaseCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000009 /* DiseaseCatalog.swift */; };
+		A1000000000000000000000A /* LicenseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000000000000000000000A /* LicenseService.swift */; };
+		A1000000000000000000000B /* ProfileStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000000000000000000000B /* ProfileStore.swift */; };
+		A1000000000000000000000C /* FoodDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000000000000000000000C /* FoodDatabase.swift */; };
+		A1000000000000000000000D /* ActivationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000000000000000000000D /* ActivationView.swift */; };
+		A1000000000000000000000E /* ConsentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000000000000000000000E /* ConsentView.swift */; };
+		A1000000000000000000000F /* SurveyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000000000000000000000F /* SurveyView.swift */; };
+		A10000000000000000000010 /* AllergenPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000010 /* AllergenPickerView.swift */; };
+		A10000000000000000000011 /* FoodSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000011 /* FoodSelectionView.swift */; };
+		A10000000000000000000012 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000012 /* MainTabView.swift */; };
+		A10000000000000000000013 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000013 /* TodayView.swift */; };
+		A10000000000000000000014 /* PlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000014 /* PlanView.swift */; };
+		A10000000000000000000015 /* DiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000015 /* DiaryView.swift */; };
+		A10000000000000000000016 /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000016 /* MoreView.swift */; };
+		A10000000000000000000017 /* foods.json in Resources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000017 /* foods.json */; };
+		A10000000000000000000018 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000018 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A20000000000000000000001 /* HealthyLifeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthyLifeApp.swift; sourceTree = "<group>"; };
+		A20000000000000000000002 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		A20000000000000000000003 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		A20000000000000000000004 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		A20000000000000000000005 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		A20000000000000000000006 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		A20000000000000000000007 /* NutritionCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionCalculator.swift; sourceTree = "<group>"; };
+		A20000000000000000000008 /* WeeklyPlanGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyPlanGenerator.swift; sourceTree = "<group>"; };
+		A20000000000000000000009 /* DiseaseCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseCatalog.swift; sourceTree = "<group>"; };
+		A2000000000000000000000A /* LicenseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseService.swift; sourceTree = "<group>"; };
+		A2000000000000000000000B /* ProfileStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStore.swift; sourceTree = "<group>"; };
+		A2000000000000000000000C /* FoodDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDatabase.swift; sourceTree = "<group>"; };
+		A2000000000000000000000D /* ActivationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivationView.swift; sourceTree = "<group>"; };
+		A2000000000000000000000E /* ConsentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentView.swift; sourceTree = "<group>"; };
+		A2000000000000000000000F /* SurveyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyView.swift; sourceTree = "<group>"; };
+		A20000000000000000000010 /* AllergenPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergenPickerView.swift; sourceTree = "<group>"; };
+		A20000000000000000000011 /* FoodSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSelectionView.swift; sourceTree = "<group>"; };
+		A20000000000000000000012 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		A20000000000000000000013 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
+		A20000000000000000000014 /* PlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanView.swift; sourceTree = "<group>"; };
+		A20000000000000000000015 /* DiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryView.swift; sourceTree = "<group>"; };
+		A20000000000000000000016 /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
+		A20000000000000000000017 /* foods.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = foods.json; sourceTree = "<group>"; };
+		A20000000000000000000018 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A20000000000000000000019 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2000000000000000000001A /* HealthyLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthyLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A30000000000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A40000000000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				A40000000000000000000002 /* HealthyLife */,
+				A40000000000000000000003 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A40000000000000000000002 /* HealthyLife */ = {
+			isa = PBXGroup;
+			children = (
+				A40000000000000000000004 /* App */,
+				A40000000000000000000005 /* Models */,
+				A40000000000000000000006 /* Domain */,
+				A40000000000000000000007 /* Data */,
+				A40000000000000000000008 /* UI */,
+				A40000000000000000000009 /* Theme */,
+				A4000000000000000000000A /* Resources */,
+				A20000000000000000000018 /* Assets.xcassets */,
+				A20000000000000000000019 /* Info.plist */,
+			);
+			path = HealthyLife;
+			sourceTree = "<group>";
+		};
+		A40000000000000000000003 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A2000000000000000000001A /* HealthyLife.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A40000000000000000000004 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000001 /* HealthyLifeApp.swift */,
+				A20000000000000000000002 /* AppState.swift */,
+				A20000000000000000000003 /* RootView.swift */,
+				A20000000000000000000004 /* AppConfig.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A40000000000000000000005 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000006 /* Models.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A40000000000000000000006 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000007 /* NutritionCalculator.swift */,
+				A20000000000000000000008 /* WeeklyPlanGenerator.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		A40000000000000000000007 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000009 /* DiseaseCatalog.swift */,
+				A2000000000000000000000A /* LicenseService.swift */,
+				A2000000000000000000000B /* ProfileStore.swift */,
+				A2000000000000000000000C /* FoodDatabase.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		A40000000000000000000008 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				A4000000000000000000000B /* Activation */,
+				A4000000000000000000000C /* Consent */,
+				A4000000000000000000000D /* Survey */,
+				A4000000000000000000000E /* Main */,
+				A4000000000000000000000F /* Today */,
+				A40000000000000000000010 /* Plan */,
+				A40000000000000000000011 /* Diary */,
+				A40000000000000000000012 /* More */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		A40000000000000000000009 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000005 /* AppTheme.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		A4000000000000000000000A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000017 /* foods.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A4000000000000000000000B /* Activation */ = { isa = PBXGroup; children = (A2000000000000000000000D /* ActivationView.swift */); path = Activation; sourceTree = "<group>"; };
+		A4000000000000000000000C /* Consent */ = { isa = PBXGroup; children = (A2000000000000000000000E /* ConsentView.swift */); path = Consent; sourceTree = "<group>"; };
+		A4000000000000000000000D /* Survey */ = { isa = PBXGroup; children = (A2000000000000000000000F /* SurveyView.swift */, A20000000000000000000010 /* AllergenPickerView.swift */, A20000000000000000000011 /* FoodSelectionView.swift */); path = Survey; sourceTree = "<group>"; };
+		A4000000000000000000000E /* Main */ = { isa = PBXGroup; children = (A20000000000000000000012 /* MainTabView.swift */); path = Main; sourceTree = "<group>"; };
+		A4000000000000000000000F /* Today */ = { isa = PBXGroup; children = (A20000000000000000000013 /* TodayView.swift */); path = Today; sourceTree = "<group>"; };
+		A40000000000000000000010 /* Plan */ = { isa = PBXGroup; children = (A20000000000000000000014 /* PlanView.swift */); path = Plan; sourceTree = "<group>"; };
+		A40000000000000000000011 /* Diary */ = { isa = PBXGroup; children = (A20000000000000000000015 /* DiaryView.swift */); path = Diary; sourceTree = "<group>"; };
+		A40000000000000000000012 /* More */ = { isa = PBXGroup; children = (A20000000000000000000016 /* MoreView.swift */); path = More; sourceTree = "<group>"; };
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A50000000000000000000001 /* HealthyLife */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A60000000000000000000003 /* Build configuration list for PBXNativeTarget "HealthyLife" */;
+			buildPhases = (
+				A50000000000000000000002 /* Sources */,
+				A30000000000000000000001 /* Frameworks */,
+				A50000000000000000000003 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HealthyLife;
+			productName = HealthyLife;
+			productReference = A2000000000000000000001A /* HealthyLife.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A70000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					A50000000000000000000001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = A60000000000000000000001 /* Build configuration list for PBXProject "HealthyLife" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = ru;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				ru,
+				Base,
+			);
+			mainGroup = A40000000000000000000001;
+			productRefGroup = A40000000000000000000003 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A50000000000000000000001 /* HealthyLife */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A50000000000000000000003 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000000000000000000017 /* foods.json in Resources */,
+				A10000000000000000000018 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A50000000000000000000002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000000000000000000001 /* HealthyLifeApp.swift in Sources */,
+				A10000000000000000000002 /* AppState.swift in Sources */,
+				A10000000000000000000003 /* RootView.swift in Sources */,
+				A10000000000000000000004 /* AppConfig.swift in Sources */,
+				A10000000000000000000005 /* AppTheme.swift in Sources */,
+				A10000000000000000000006 /* Models.swift in Sources */,
+				A10000000000000000000007 /* NutritionCalculator.swift in Sources */,
+				A10000000000000000000008 /* WeeklyPlanGenerator.swift in Sources */,
+				A10000000000000000000009 /* DiseaseCatalog.swift in Sources */,
+				A1000000000000000000000A /* LicenseService.swift in Sources */,
+				A1000000000000000000000B /* ProfileStore.swift in Sources */,
+				A1000000000000000000000C /* FoodDatabase.swift in Sources */,
+				A1000000000000000000000D /* ActivationView.swift in Sources */,
+				A1000000000000000000000E /* ConsentView.swift in Sources */,
+				A1000000000000000000000F /* SurveyView.swift in Sources */,
+				A10000000000000000000010 /* AllergenPickerView.swift in Sources */,
+				A10000000000000000000011 /* FoodSelectionView.swift in Sources */,
+				A10000000000000000000012 /* MainTabView.swift in Sources */,
+				A10000000000000000000013 /* TodayView.swift in Sources */,
+				A10000000000000000000014 /* PlanView.swift in Sources */,
+				A10000000000000000000015 /* DiaryView.swift in Sources */,
+				A10000000000000000000016 /* MoreView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A80000000000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A80000000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A80000000000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = HealthyLife/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Healthy Life";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nutriheal.app.ios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A80000000000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = HealthyLife/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Healthy Life";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nutriheal.app.ios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A60000000000000000000001 /* Build configuration list for PBXProject "HealthyLife" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A80000000000000000000001 /* Debug */,
+				A80000000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A60000000000000000000003 /* Build configuration list for PBXNativeTarget "HealthyLife" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A80000000000000000000003 /* Debug */,
+				A80000000000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A70000000000000000000001 /* Project object */;
+}
