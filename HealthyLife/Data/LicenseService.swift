@@ -76,20 +76,88 @@ private struct LicenseAPI {
             case message
         }
     }
+
+    struct AutoTrialRequest: Encodable {
+        let deviceId: String
+        let appVersion: String
+        let channel: String
+
+        enum CodingKeys: String, CodingKey {
+            case deviceId = "device_id"
+            case appVersion = "app_version"
+            case channel
+        }
+    }
+
+    struct AutoTrialResponse: Decodable {
+        let ok: Bool?
+        let sessionToken: String?
+        let code: String?
+        let expiresAt: String?
+        let message: String?
+        let detail: String?
+
+        enum CodingKeys: String, CodingKey {
+            case ok
+            case sessionToken = "session_token"
+            case code
+            case expiresAt = "expires_at"
+            case message
+            case detail
+        }
+    }
 }
 
 actor LicenseService {
     private let store = LicenseStore()
+    private let offlineGraceSeconds: TimeInterval = 14 * 24 * 3600
+
+    func bootstrapAccess() async -> (LicenseStatus, Bool) {
+        var trialExpired = false
+        if AppConfig.autoTrialEnabled, store.load() == nil {
+            do {
+                try await requestAutoTrial()
+            } catch {
+                let msg = error.localizedDescription
+                trialExpired = msg.localizedCaseInsensitiveContains("завершён") || msg.localizedCaseInsensitiveContains("использован")
+            }
+        }
+        let status = await evaluateAccess()
+        return (status, trialExpired)
+    }
+
+    func requestAutoTrial() async throws {
+        let body = LicenseAPI.AutoTrialRequest(
+            deviceId: store.deviceId(),
+            appVersion: Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0.0",
+            channel: AppConfig.distributionChannel
+        )
+        let response: LicenseAPI.AutoTrialResponse = try await post("/api/v1/auto-trial", body: body)
+        guard let token = response.sessionToken else {
+            throw LicenseError.server(response.detail ?? response.message ?? "Ошибка автотриала")
+        }
+        store.save(StoredLicense(
+            installationId: store.deviceId(),
+            sessionToken: token,
+            code: response.code ?? "AUTO-TRIAL",
+            expiresAt: response.expiresAt,
+            lastVerifiedAt: Date()
+        ))
+    }
 
     func evaluateAccess() async -> LicenseStatus {
         guard let stored = store.load() else { return .needsActivation }
+        if isExpiredLocally(stored.expiresAt) {
+            store.clear()
+            return .needsActivation
+        }
         do {
             let valid = try await verify(stored: stored)
             if valid { return .licensed }
             store.clear()
             return .needsActivation
         } catch {
-            if Date().timeIntervalSince(stored.lastVerifiedAt) < 72 * 3600 {
+            if Date().timeIntervalSince(stored.lastVerifiedAt) < offlineGraceSeconds {
                 return .licensed
             }
             return .needsActivation
@@ -115,6 +183,35 @@ actor LicenseService {
 
     func deactivate() {
         store.clear()
+    }
+
+    private func isExpiredLocally(_ expiresAt: String?) -> Bool {
+        guard let expiresAt, let date = parseDate(expiresAt) else { return false }
+        return date <= Date()
+    }
+
+    private func parseDate(_ value: String) -> Date? {
+        let formatter = ISO8601DateFormatter()
+        formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+        if let d = formatter.date(from: value) { return d }
+        formatter.formatOptions = [.withInternetDateTime]
+        return formatter.date(from: value)
+    }
+
+    func expiryNoticeText() -> String? {
+        guard let stored = store.load(), let expiresAt = stored.expiresAt else { return nil }
+        guard let expiry = parseDate(expiresAt), expiry > Date() else { return nil }
+        let days = Calendar.current.dateComponents([.day], from: Date(), to: expiry).day ?? 0
+        if days <= 0 {
+            return "Пробный доступ заканчивается сегодня. Продлите в Telegram @HealthyLifePlan_bot"
+        }
+        if days == 1 {
+            return "Пробный доступ: остался 1 день. Продлите в @HealthyLifePlan_bot"
+        }
+        if days <= 14 {
+            return "Пробный доступ: осталось \(days) дн. Продлите в @HealthyLifePlan_bot"
+        }
+        return nil
     }
 
     private func verify(stored: StoredLicense) async throws -> Bool {

@@ -7,31 +7,67 @@ struct TodayView: View {
         NavigationStack {
             ScrollView {
                 if let profile = appState.profile, let plan = appState.weeklyPlan {
-                    let today = plan.days[Calendar.current.component(.weekday, from: Date()) == 1 ? 6 : Calendar.current.component(.weekday, from: Date()) - 2]
+                    let dayIndex = appState.todayDayIndex()
+                    let today = plan.days[dayIndex]
                     VStack(alignment: .leading, spacing: 16) {
+                        if let notice = appState.licenseExpiryNotice {
+                            Text(notice)
+                                .font(.subheadline)
+                                .foregroundStyle(AppTheme.warning)
+                                .cardStyle()
+                        }
+                        if let progress = appState.dailyProgress {
+                            progressCard(progress)
+                        }
                         header(profile: profile, plan: plan)
-                        waterCard(glasses: plan.waterGlasses)
+                        waterCard(target: plan.waterGlasses)
                         ForEach(today.meals) { meal in
                             mealCard(meal)
                         }
+                        MedicalDisclaimerBanner()
                     }
                     .padding()
                 } else {
-                    VStack(spacing: 12) {
-                        Image(systemName: "leaf")
-                            .font(.largeTitle)
-                            .foregroundStyle(AppTheme.primary)
-                        Text("Нет плана")
-                            .font(.headline)
-                        Text("Пройдите опрос")
-                            .foregroundStyle(.secondary)
-                    }
-                    .padding()
+                    emptyState
                 }
             }
             .background(AppTheme.background)
             .navigationTitle("Сегодня")
         }
+    }
+
+    private var emptyState: some View {
+        VStack(spacing: 12) {
+            Image(systemName: "leaf")
+                .font(.largeTitle)
+                .foregroundStyle(AppTheme.primary)
+            Text("Нет плана").font(.headline)
+            Text("Пройдите опрос").foregroundStyle(.secondary)
+        }
+        .padding()
+    }
+
+    private func progressCard(_ p: DailyProgress) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack {
+                Text("Прогресс дня").font(.headline)
+                Spacer()
+                Text("\(p.adherencePercent)%").font(.title3.bold()).foregroundStyle(AppTheme.primary)
+            }
+            ProgressView(value: min(p.consumedKcal, Double(p.targetKcal)), total: Double(p.targetKcal))
+                .tint(AppTheme.primary)
+            Text("\(Int(p.consumedKcal)) / \(p.targetKcal) ккал")
+                .font(.caption)
+                .foregroundStyle(.secondary)
+            HStack {
+                Label("\(p.waterGlasses)/\(p.waterTarget)", systemImage: "drop.fill")
+                Spacer()
+                Text("Б \(Int(p.proteinG)) · У \(Int(p.carbsG)) · Ж \(Int(p.fatG))")
+            }
+            .font(.caption)
+            .foregroundStyle(.secondary)
+        }
+        .cardStyle()
     }
 
     private func header(profile: UserProfile, plan: WeeklyPlan) -> some View {
@@ -57,26 +93,39 @@ struct TodayView: View {
         .cardStyle()
     }
 
-    private func waterCard(glasses: Int) -> some View {
+    private func waterCard(target: Int) -> some View {
         HStack {
             Image(systemName: "drop.fill").foregroundStyle(.blue)
-            Text("Вода: \(glasses) стаканов в день")
+            Text("Вода: \(appState.waterGlassesToday) / \(target) стаканов")
             Spacer()
+            Button("+1 стакан") { appState.addWaterGlass() }
+                .font(.caption.bold())
         }
         .cardStyle()
     }
 
     private func mealCard(_ meal: DayMeal) -> some View {
-        VStack(alignment: .leading, spacing: 6) {
+        VStack(alignment: .leading, spacing: 8) {
             HStack {
                 Text(meal.mealType).font(.headline)
                 Spacer()
                 Text(meal.time).font(.caption).foregroundStyle(.secondary)
             }
             Text(meal.dishName).font(.subheadline)
-            Text("\(meal.calories) ккал · Б \(meal.proteinG) · У \(meal.carbsG) · Ж \(meal.fatG)")
+            Text("\(meal.calories) ккал · Б \(Int(meal.proteinG)) · У \(Int(meal.carbsG)) · Ж \(Int(meal.fatG))")
                 .font(.caption)
                 .foregroundStyle(.secondary)
+            if !meal.ingredients.isEmpty {
+                Text(meal.ingredients.prefix(4).joined(separator: ", "))
+                    .font(.caption2)
+                    .foregroundStyle(.secondary)
+            }
+            Button("Отметить съеденным") {
+                appState.markMealEaten(meal)
+            }
+            .font(.caption.bold())
+            .buttonStyle(.bordered)
+            .tint(AppTheme.primary)
         }
         .cardStyle()
     }

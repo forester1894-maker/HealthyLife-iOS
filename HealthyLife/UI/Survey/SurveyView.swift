@@ -43,7 +43,7 @@ struct SurveyView: View {
             .navigationTitle("Опрос")
             .navigationDestination(isPresented: $showFoodSelection) {
                 FoodSelectionView(draft: $draft) { profile in
-                    appState.saveProfile(profile)
+                    appState.completeSurvey(profile)
                 }
             }
         }

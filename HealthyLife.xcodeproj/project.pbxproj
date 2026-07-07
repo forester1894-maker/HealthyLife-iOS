@@ -7,6 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		Be89ae4abdd814571 /* SecretsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33f2fc1103e34121 /* SecretsLoader.swift */; };
+		B749384e2e74b4138 /* AiChatStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5159120a00d24a2e /* AiChatStore.swift */; };
+		B38c78583a8424b8c /* AllergenCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = Fb82d0829b70344c6 /* AllergenCatalog.swift */; };
+		B2518d41ab94a4aa3 /* DiaryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = Fed8133294b45466a /* DiaryStore.swift */; };
+		Bb99068964109490f /* DiseaseDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9aac3956bce64089 /* DiseaseDetailData.swift */; };
+		B1e69494d3aca4f1e /* PlanStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9a6495c356e5414b /* PlanStore.swift */; };
+		B66af08fb12b6461e /* ReminderStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F274e94926cfc4b01 /* ReminderStore.swift */; };
+		B000bc2783d4b4745 /* WeightStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5d972c13292946b9 /* WeightStore.swift */; };
+		B9e975341cbab4018 /* YandexAiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36dd7add4a3540ca /* YandexAiService.swift */; };
+		Bf13144b0caa144bc /* AllergenFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2239fc168c374bb3 /* AllergenFilter.swift */; };
+		B46b8dbe58c8f422c /* ComorbidityRulesEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = Fd3abddc4af8f49e4 /* ComorbidityRulesEngine.swift */; };
+		Ba0e0338e9c044bc7 /* DailyProgressCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = Fa30af5745d74438b /* DailyProgressCalculator.swift */; };
+		B0ee1ef85b32d4d97 /* DiseaseNutrientProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F694867585fae4ba3 /* DiseaseNutrientProtocols.swift */; };
+		B3eb94a857eb24736 /* MealNutritionScaler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F599f07a00d3f42fd /* MealNutritionScaler.swift */; };
+		B5559844eb2684040 /* MealTemplateCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31e9dea491a8445d /* MealTemplateCatalog.swift */; };
+		Bb2cf8f5d3ad84d81 /* MenopauseNutrition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3f094df555d142fe /* MenopauseNutrition.swift */; };
+		B931f093a42e54abc /* ShoppingListGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4567405fe5f04d9b /* ShoppingListGenerator.swift */; };
+		Ba2959a91852a4479 /* TherapeuticNutritionEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = Fcaf5ef26811d4bd1 /* TherapeuticNutritionEngine.swift */; };
+		Bf687e44df3624da1 /* MedicalDisclaimerBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F850b14c642144bf6 /* MedicalDisclaimerBanner.swift */; };
+		B1537f1ce2f824e77 /* FoodSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F865483a7e5184315 /* FoodSearchView.swift */; };
+		B759254cbc9af4a1b /* AiAdvisorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = Fba6a7c9c965e4573 /* AiAdvisorView.swift */; };
+		B5dfb93a2a9664bda /* DiseaseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13eacec568684b24 /* DiseaseListView.swift */; };
+		B871af57ef1e0400d /* LegalViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7fc2c2d16c774f80 /* LegalViews.swift */; };
+		B283d9ef13adf450b /* RemindersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = Fbf904cd795234a1e /* RemindersView.swift */; };
+		Bbd6c37d4d63c4cf1 /* RestrictionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3a6d784443cf4e04 /* RestrictionsView.swift */; };
+		B56bf018dc7c9497b /* WeightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = Fa1130149810c442d /* WeightView.swift */; };
+		B3edd0e5039ee473b /* PlanReadyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8d055c376eb94cf6 /* PlanReadyView.swift */; };
 		A10000000000000000000001 /* HealthyLifeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000001 /* HealthyLifeApp.swift */; };
 		A10000000000000000000002 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000002 /* AppState.swift */; };
 		A10000000000000000000003 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000003 /* RootView.swift */; };
@@ -31,9 +58,37 @@
 		A10000000000000000000016 /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000016 /* MoreView.swift */; };
 		A10000000000000000000017 /* foods.json in Resources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000017 /* foods.json */; };
 		A10000000000000000000018 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000018 /* Assets.xcassets */; };
+		Bsec000000000000000001 /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = Fsec000000000000000001 /* Secrets.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F33f2fc1103e34121 /* SecretsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretsLoader.swift; sourceTree = <group>; };
+		F5159120a00d24a2e /* AiChatStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiChatStore.swift; sourceTree = <group>; };
+		Fb82d0829b70344c6 /* AllergenCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergenCatalog.swift; sourceTree = <group>; };
+		Fed8133294b45466a /* DiaryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryStore.swift; sourceTree = <group>; };
+		F9aac3956bce64089 /* DiseaseDetailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseDetailData.swift; sourceTree = <group>; };
+		F9a6495c356e5414b /* PlanStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanStore.swift; sourceTree = <group>; };
+		F274e94926cfc4b01 /* ReminderStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderStore.swift; sourceTree = <group>; };
+		F5d972c13292946b9 /* WeightStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightStore.swift; sourceTree = <group>; };
+		F36dd7add4a3540ca /* YandexAiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexAiService.swift; sourceTree = <group>; };
+		F2239fc168c374bb3 /* AllergenFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergenFilter.swift; sourceTree = <group>; };
+		Fd3abddc4af8f49e4 /* ComorbidityRulesEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComorbidityRulesEngine.swift; sourceTree = <group>; };
+		Fa30af5745d74438b /* DailyProgressCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyProgressCalculator.swift; sourceTree = <group>; };
+		F694867585fae4ba3 /* DiseaseNutrientProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseNutrientProtocols.swift; sourceTree = <group>; };
+		F599f07a00d3f42fd /* MealNutritionScaler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealNutritionScaler.swift; sourceTree = <group>; };
+		F31e9dea491a8445d /* MealTemplateCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTemplateCatalog.swift; sourceTree = <group>; };
+		F3f094df555d142fe /* MenopauseNutrition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenopauseNutrition.swift; sourceTree = <group>; };
+		F4567405fe5f04d9b /* ShoppingListGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListGenerator.swift; sourceTree = <group>; };
+		Fcaf5ef26811d4bd1 /* TherapeuticNutritionEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TherapeuticNutritionEngine.swift; sourceTree = <group>; };
+		F850b14c642144bf6 /* MedicalDisclaimerBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalDisclaimerBanner.swift; sourceTree = <group>; };
+		F865483a7e5184315 /* FoodSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSearchView.swift; sourceTree = <group>; };
+		Fba6a7c9c965e4573 /* AiAdvisorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiAdvisorView.swift; sourceTree = <group>; };
+		F13eacec568684b24 /* DiseaseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseListView.swift; sourceTree = <group>; };
+		F7fc2c2d16c774f80 /* LegalViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalViews.swift; sourceTree = <group>; };
+		Fbf904cd795234a1e /* RemindersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersView.swift; sourceTree = <group>; };
+		F3a6d784443cf4e04 /* RestrictionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestrictionsView.swift; sourceTree = <group>; };
+		Fa1130149810c442d /* WeightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightView.swift; sourceTree = <group>; };
+		F8d055c376eb94cf6 /* PlanReadyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanReadyView.swift; sourceTree = <group>; };
 		A20000000000000000000001 /* HealthyLifeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthyLifeApp.swift; sourceTree = "<group>"; };
 		A20000000000000000000002 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		A20000000000000000000003 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -59,6 +114,7 @@
 		A20000000000000000000017 /* foods.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = foods.json; sourceTree = "<group>"; };
 		A20000000000000000000018 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A20000000000000000000019 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		Fsec000000000000000001 /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
 		A2000000000000000000001A /* HealthyLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthyLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -93,6 +149,7 @@
 				A4000000000000000000000A /* Resources */,
 				A20000000000000000000018 /* Assets.xcassets */,
 				A20000000000000000000019 /* Info.plist */,
+				Fsec000000000000000001 /* Secrets.plist */,
 			);
 			path = HealthyLife;
 			sourceTree = "<group>";
@@ -243,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A10000000000000000000017 /* foods.json in Resources */,
+				Bsec000000000000000001 /* Secrets.plist in Resources */,
 				A10000000000000000000018 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,6 +312,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				Be89ae4abdd814571 /* SecretsLoader.swift in Sources */,
+				B749384e2e74b4138 /* AiChatStore.swift in Sources */,
+				B38c78583a8424b8c /* AllergenCatalog.swift in Sources */,
+				B2518d41ab94a4aa3 /* DiaryStore.swift in Sources */,
+				Bb99068964109490f /* DiseaseDetailData.swift in Sources */,
+				B1e69494d3aca4f1e /* PlanStore.swift in Sources */,
+				B66af08fb12b6461e /* ReminderStore.swift in Sources */,
+				B000bc2783d4b4745 /* WeightStore.swift in Sources */,
+				B9e975341cbab4018 /* YandexAiService.swift in Sources */,
+				Bf13144b0caa144bc /* AllergenFilter.swift in Sources */,
+				B46b8dbe58c8f422c /* ComorbidityRulesEngine.swift in Sources */,
+				Ba0e0338e9c044bc7 /* DailyProgressCalculator.swift in Sources */,
+				B0ee1ef85b32d4d97 /* DiseaseNutrientProtocols.swift in Sources */,
+				B3eb94a857eb24736 /* MealNutritionScaler.swift in Sources */,
+				B5559844eb2684040 /* MealTemplateCatalog.swift in Sources */,
+				Bb2cf8f5d3ad84d81 /* MenopauseNutrition.swift in Sources */,
+				B931f093a42e54abc /* ShoppingListGenerator.swift in Sources */,
+				Ba2959a91852a4479 /* TherapeuticNutritionEngine.swift in Sources */,
+				Bf687e44df3624da1 /* MedicalDisclaimerBanner.swift in Sources */,
+				B1537f1ce2f824e77 /* FoodSearchView.swift in Sources */,
+				B759254cbc9af4a1b /* AiAdvisorView.swift in Sources */,
+				B5dfb93a2a9664bda /* DiseaseListView.swift in Sources */,
+				B871af57ef1e0400d /* LegalViews.swift in Sources */,
+				B283d9ef13adf450b /* RemindersView.swift in Sources */,
+				Bbd6c37d4d63c4cf1 /* RestrictionsView.swift in Sources */,
+				B56bf018dc7c9497b /* WeightView.swift in Sources */,
+				B3edd0e5039ee473b /* PlanReadyView.swift in Sources */,
 				A10000000000000000000001 /* HealthyLifeApp.swift in Sources */,
 				A10000000000000000000002 /* AppState.swift in Sources */,
 				A10000000000000000000003 /* RootView.swift in Sources */,
@@ -329,7 +414,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 22;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
@@ -342,7 +427,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nutriheal.app.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -356,7 +441,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 22;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
@@ -369,7 +454,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nutriheal.app.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

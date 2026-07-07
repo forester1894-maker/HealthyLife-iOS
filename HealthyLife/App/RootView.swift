@@ -12,6 +12,8 @@ struct RootView: View {
                 ConsentView()
             case .survey:
                 SurveyView()
+            case .planReady:
+                PlanReadyView()
             case .main:
                 MainTabView()
             }

@@ -15,15 +15,20 @@ struct MoreView: View {
                     }
                     NavigationLink("Пройти опрос заново") {
                         SurveyView()
-                            .onDisappear {
-                                if let p = appState.profile {
-                                    appState.saveProfile(p)
-                                }
-                            }
                     }
                 }
 
-                Section("Поддержка") {
+                Section("Здоровье и питание") {
+                    NavigationLink("Справочник заболеваний") { DiseaseListView() }
+                    NavigationLink("Ограничения и лимиты") { RestrictionsView() }
+                    NavigationLink("Вес") { WeightView() }
+                    NavigationLink("ИИ-советник") { AiAdvisorView() }
+                    NavigationLink("Напоминания") { RemindersView() }
+                }
+
+                Section("Информация") {
+                    NavigationLink("Конфиденциальность") { PrivacyView() }
+                    NavigationLink("Отказ от ответственности") { DisclaimerView() }
                     Link("Telegram-бот", destination: URL(string: "https://t.me/HealthyLifePlan_bot")!)
                     Link("Скачать APK (Android)", destination: URL(string: "https://disk.yandex.ru/d/pMy7h-yl9fRQWg")!)
                 }
@@ -47,7 +52,7 @@ struct MoreView: View {
                     appState.clearProfile()
                 }
             } message: {
-                Text("Все данные опроса будут удалены с устройства.")
+                Text("Все данные опроса, плана и дневника будут удалены с устройства.")
             }
         }
     }

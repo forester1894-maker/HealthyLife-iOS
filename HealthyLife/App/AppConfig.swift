@@ -1,6 +1,10 @@
 import Foundation
 
 enum AppConfig {
+    static let autoTrialEnabled = true
+    static let autoTrialDays = 3
+    static let distributionChannel = "ios"
+
     static var licenseBaseURL: String {
         Bundle.main.object(forInfoDictionaryKey: "LICENSE_BASE_URL") as? String
             ?? "http://213.176.94.59:8080"
@@ -12,10 +16,14 @@ enum AppConfig {
     }
 
     static var yandexApiKey: String {
-        Bundle.main.object(forInfoDictionaryKey: "YANDEX_API_KEY") as? String ?? ""
+        SecretsLoader.value("YANDEX_API_KEY")
+            ?? Bundle.main.object(forInfoDictionaryKey: "YANDEX_API_KEY") as? String
+            ?? ""
     }
 
     static var yandexFolderId: String {
-        Bundle.main.object(forInfoDictionaryKey: "YANDEX_FOLDER_ID") as? String ?? ""
+        SecretsLoader.value("YANDEX_FOLDER_ID")
+            ?? Bundle.main.object(forInfoDictionaryKey: "YANDEX_FOLDER_ID") as? String
+            ?? ""
     }
 }

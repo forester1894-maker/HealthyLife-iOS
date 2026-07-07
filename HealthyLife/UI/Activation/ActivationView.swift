@@ -18,29 +18,43 @@ struct ActivationView: View {
                 Text("Лечебное питание")
                     .foregroundStyle(.secondary)
 
-                Text("Введите код доступа из Telegram-бота @HealthyLifePlan_bot")
-                    .multilineTextAlignment(.center)
-                    .foregroundStyle(.secondary)
-                    .padding(.horizontal)
-
-                TextField("NH-XXXX-XXXX", text: $code)
-                    .textInputAutocapitalization(.characters)
-                    .autocorrectionDisabled()
-                    .padding()
-                    .background(AppTheme.container)
-                    .clipShape(RoundedRectangle(cornerRadius: 12))
-
-                if let errorMessage {
-                    Text(errorMessage)
-                        .foregroundStyle(.red)
-                        .font(.footnote)
+                if appState.autoTrialInProgress {
+                    ProgressView("Подключаем пробный доступ на \(AppConfig.autoTrialDays) дня…")
+                        .padding()
+                } else if appState.trialExpiredNotice {
+                    trialExpiredCard
+                } else if AppConfig.autoTrialEnabled {
+                    Text("Пробный доступ на \(AppConfig.autoTrialDays) дня активируется автоматически при первом запуске.")
+                        .multilineTextAlignment(.center)
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                        .padding(.horizontal)
+                } else {
+                    Text("Введите код доступа из Telegram-бота @HealthyLifePlan_bot")
+                        .multilineTextAlignment(.center)
+                        .foregroundStyle(.secondary)
                 }
 
-                Button(isLoading ? "Проверка…" : "Активировать") {
-                    Task { await activate() }
+                if !AppConfig.autoTrialEnabled || appState.trialExpiredNotice {
+                    TextField("NH-XXXX-XXXX", text: $code)
+                        .textInputAutocapitalization(.characters)
+                        .autocorrectionDisabled()
+                        .padding()
+                        .background(AppTheme.container)
+                        .clipShape(RoundedRectangle(cornerRadius: 12))
+
+                    if let errorMessage {
+                        Text(errorMessage)
+                            .foregroundStyle(.red)
+                            .font(.footnote)
+                    }
+
+                    Button(isLoading ? "Проверка…" : "Активировать") {
+                        Task { await activate() }
+                    }
+                    .buttonStyle(PrimaryButtonStyle())
+                    .disabled(code.trimmingCharacters(in: .whitespaces).isEmpty || isLoading)
                 }
-                .buttonStyle(PrimaryButtonStyle())
-                .disabled(code.trimmingCharacters(in: .whitespaces).isEmpty || isLoading)
 
                 Link("Получить код в Telegram", destination: URL(string: "https://t.me/HealthyLifePlan_bot")!)
                     .font(.subheadline)
@@ -48,6 +62,19 @@ struct ActivationView: View {
             .padding(24)
         }
         .background(AppTheme.background)
+    }
+
+    private var trialExpiredCard: some View {
+        VStack(spacing: 12) {
+            Text("Пробный период завершён")
+                .font(.headline)
+                .foregroundStyle(AppTheme.warning)
+            Text("Получите код в Telegram @HealthyLifePlan_bot или введите купленный код ниже.")
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
+                .multilineTextAlignment(.center)
+        }
+        .cardStyle()
     }
 
     private func activate() async {

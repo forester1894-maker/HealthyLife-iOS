@@ -2,7 +2,14 @@ import SwiftUI
 
 struct DiaryView: View {
     @EnvironmentObject private var appState: AppState
-    @AppStorage("diary_notes") private var notes = ""
+
+    private var todayEntries: [FoodDiaryEntry] {
+        let f = DateFormatter()
+        f.dateFormat = "yyyy-MM-dd"
+        f.locale = Locale(identifier: "en_US_POSIX")
+        let iso = f.string(from: Date())
+        return appState.diaryEntries.filter { $0.dateIso == iso }
+    }
 
     var body: some View {
         NavigationStack {
@@ -11,12 +18,29 @@ struct DiaryView: View {
                     if let profile = appState.profile {
                         statsCard(profile: profile)
                     }
-                    Text("Заметки дня").font(.headline)
-                    TextEditor(text: $notes)
-                        .frame(minHeight: 160)
-                        .padding(8)
-                        .background(.white)
-                        .clipShape(RoundedRectangle(cornerRadius: 12))
+                    if let progress = appState.dailyProgress {
+                        progressSummary(progress)
+                    }
+
+                    HStack {
+                        Text("Записи за сегодня").font(.headline)
+                        Spacer()
+                        NavigationLink("Добавить") {
+                            FoodSearchView()
+                        }
+                        .font(.subheadline.bold())
+                    }
+
+                    if todayEntries.isEmpty {
+                        Text("Пока нет записей. Отметьте приём пищи на вкладке «Сегодня» или добавьте продукт.")
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                            .cardStyle()
+                    } else {
+                        ForEach(todayEntries) { entry in
+                            entryRow(entry)
+                        }
+                    }
                 }
                 .padding()
             }
@@ -33,6 +57,37 @@ struct DiaryView: View {
             LabeledContent("Рост", value: "\(profile.heightCm) см")
             if let target = appState.weeklyPlan?.targetKcal {
                 LabeledContent("Калории", value: "\(target) ккал/день")
+            }
+        }
+        .cardStyle()
+    }
+
+    private func progressSummary(_ p: DailyProgress) -> some View {
+        VStack(alignment: .leading, spacing: 6) {
+            Text("Итого за день").font(.headline)
+            Text("\(Int(p.consumedKcal)) ккал · соблюдение \(p.adherencePercent)%")
+                .foregroundStyle(.secondary)
+        }
+        .cardStyle()
+    }
+
+    private func entryRow(_ entry: FoodDiaryEntry) -> some View {
+        HStack {
+            VStack(alignment: .leading, spacing: 4) {
+                Text(entry.mealType).font(.caption).foregroundStyle(.secondary)
+                Text(entry.foodName).font(.subheadline.bold())
+                Text("\(Int(entry.calories)) ккал")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
+            Spacer()
+            if entry.fromPlan {
+                Image(systemName: "calendar").foregroundStyle(AppTheme.primary)
+            }
+            Button(role: .destructive) {
+                appState.removeDiaryEntry(id: entry.id)
+            } label: {
+                Image(systemName: "trash")
             }
         }
         .cardStyle()
