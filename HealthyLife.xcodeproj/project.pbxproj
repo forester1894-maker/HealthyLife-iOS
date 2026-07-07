@@ -169,6 +169,7 @@
 				A20000000000000000000002 /* AppState.swift */,
 				A20000000000000000000003 /* RootView.swift */,
 				A20000000000000000000004 /* AppConfig.swift */,
+				F33f2fc1103e34121 /* SecretsLoader.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -186,6 +187,15 @@
 			children = (
 				A20000000000000000000007 /* NutritionCalculator.swift */,
 				A20000000000000000000008 /* WeeklyPlanGenerator.swift */,
+				F2239fc168c374bb3 /* AllergenFilter.swift */,
+				Fd3abddc4af8f49e4 /* ComorbidityRulesEngine.swift */,
+				Fa30af5745d74438b /* DailyProgressCalculator.swift */,
+				F694867585fae4ba3 /* DiseaseNutrientProtocols.swift */,
+				F599f07a00d3f42fd /* MealNutritionScaler.swift */,
+				F31e9dea491a8445d /* MealTemplateCatalog.swift */,
+				F3f094df555d142fe /* MenopauseNutrition.swift */,
+				F4567405fe5f04d9b /* ShoppingListGenerator.swift */,
+				Fcaf5ef26811d4bd1 /* TherapeuticNutritionEngine.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -197,6 +207,14 @@
 				A2000000000000000000000A /* LicenseService.swift */,
 				A2000000000000000000000B /* ProfileStore.swift */,
 				A2000000000000000000000C /* FoodDatabase.swift */,
+				F5159120a00d24a2e /* AiChatStore.swift */,
+				Fb82d0829b70344c6 /* AllergenCatalog.swift */,
+				Fed8133294b45466a /* DiaryStore.swift */,
+				F9aac3956bce64089 /* DiseaseDetailData.swift */,
+				F9a6495c356e5414b /* PlanStore.swift */,
+				F274e94926cfc4b01 /* ReminderStore.swift */,
+				F5d972c13292946b9 /* WeightStore.swift */,
+				F36dd7add4a3540ca /* YandexAiService.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -204,6 +222,7 @@
 		A40000000000000000000008 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				A40000000000000000000013 /* Components */,
 				A4000000000000000000000B /* Activation */,
 				A4000000000000000000000C /* Consent */,
 				A4000000000000000000000D /* Survey */,
@@ -214,6 +233,14 @@
 				A40000000000000000000012 /* More */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		A40000000000000000000013 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F850b14c642144bf6 /* MedicalDisclaimerBanner.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		A40000000000000000000009 /* Theme */ = {
@@ -234,12 +261,12 @@
 		};
 		A4000000000000000000000B /* Activation */ = { isa = PBXGroup; children = (A2000000000000000000000D /* ActivationView.swift */); path = Activation; sourceTree = "<group>"; };
 		A4000000000000000000000C /* Consent */ = { isa = PBXGroup; children = (A2000000000000000000000E /* ConsentView.swift */); path = Consent; sourceTree = "<group>"; };
-		A4000000000000000000000D /* Survey */ = { isa = PBXGroup; children = (A2000000000000000000000F /* SurveyView.swift */, A20000000000000000000010 /* AllergenPickerView.swift */, A20000000000000000000011 /* FoodSelectionView.swift */); path = Survey; sourceTree = "<group>"; };
+		A4000000000000000000000D /* Survey */ = { isa = PBXGroup; children = (A2000000000000000000000F /* SurveyView.swift */, A20000000000000000000010 /* AllergenPickerView.swift */, A20000000000000000000011 /* FoodSelectionView.swift */, F8d055c376eb94cf6 /* PlanReadyView.swift */); path = Survey; sourceTree = "<group>"; };
 		A4000000000000000000000E /* Main */ = { isa = PBXGroup; children = (A20000000000000000000012 /* MainTabView.swift */); path = Main; sourceTree = "<group>"; };
 		A4000000000000000000000F /* Today */ = { isa = PBXGroup; children = (A20000000000000000000013 /* TodayView.swift */); path = Today; sourceTree = "<group>"; };
 		A40000000000000000000010 /* Plan */ = { isa = PBXGroup; children = (A20000000000000000000014 /* PlanView.swift */); path = Plan; sourceTree = "<group>"; };
-		A40000000000000000000011 /* Diary */ = { isa = PBXGroup; children = (A20000000000000000000015 /* DiaryView.swift */); path = Diary; sourceTree = "<group>"; };
-		A40000000000000000000012 /* More */ = { isa = PBXGroup; children = (A20000000000000000000016 /* MoreView.swift */); path = More; sourceTree = "<group>"; };
+		A40000000000000000000011 /* Diary */ = { isa = PBXGroup; children = (A20000000000000000000015 /* DiaryView.swift */, F865483a7e5184315 /* FoodSearchView.swift */); path = Diary; sourceTree = "<group>"; };
+		A40000000000000000000012 /* More */ = { isa = PBXGroup; children = (A20000000000000000000016 /* MoreView.swift */, Fba6a7c9c965e4573 /* AiAdvisorView.swift */, F13eacec568684b24 /* DiseaseListView.swift */, F7fc2c2d16c774f80 /* LegalViews.swift */, Fbf904cd795234a1e /* RemindersView.swift */, F3a6d784443cf4e04 /* RestrictionsView.swift */, Fa1130149810c442d /* WeightView.swift */); path = More; sourceTree = "<group>"; };
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
