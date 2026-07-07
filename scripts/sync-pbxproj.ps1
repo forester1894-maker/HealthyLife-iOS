@@ -33,7 +33,7 @@ foreach ($file in $toAdd) {
     $buildId = New-Id "B"
     $refId = New-Id "F"
     $buildFileSection += "`t`t$buildId /* $($file.Name) in Sources */ = {isa = PBXBuildFile; fileRef = $refId /* $($file.Name) */; };`n"
-    $fileRefSection += "`t`t$refId /* $($file.Name) */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = $($file.Name); sourceTree = `<group>`; };`n"
+    $fileRefSection += "`t`t$refId /* $($file.Name) */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = $($file.Name); sourceTree = `"<group>`"; };`n"
     $sourcesEntries += "`t`t`t`t$buildId /* $($file.Name) in Sources */,`n"
 
     $dir = Split-Path $file.RelPath -Parent
